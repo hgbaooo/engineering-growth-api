@@ -51,3 +51,7 @@ Successful responses return resources directly and deletion returns `204`. Error
 Roadmaps contain ordered phases, phases contain ordered topics, and topics contain evidence. Cascade foreign keys deliberately remove descendants when a roadmap or phase is deleted. Progress is derived from `APPLIED` topics and never stored.
 
 Authentication is intentionally deferred. A future `User` model and `roadmap.userId` ownership relation can be introduced at the roadmap boundary, then enforced for all nested resources without changing the learning model.
+
+## Dependency policy
+
+Direct dependencies and pnpm itself are pinned to exact versions. `pnpm-workspace.yaml` enforces a strict 24-hour release quarantine, verifies the lockfile in CI, blocks exotic transitive sources, and allows build scripts only for explicitly reviewed packages. Security-patched transitive overrides are documented in that file and covered by build/tests whenever changed.
