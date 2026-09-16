@@ -12,11 +12,11 @@ Create a PostgreSQL database, then configure and initialize the application:
 
 ```bash
 cp .env.example .env
-npm install
-npm run db:generate
-npm run db:migrate
-npm run db:seed
-npm run start:dev
+pnpm install
+pnpm db:generate
+pnpm db:migrate
+pnpm db:seed
+pnpm start:dev
 ```
 
 The API defaults to `http://localhost:3001`. `DATABASE_URL`, `FRONTEND_URL`, and `PORT` are required at startup; see `.env.example` for local values.
@@ -24,16 +24,16 @@ The API defaults to `http://localhost:3001`. `DATABASE_URL`, `FRONTEND_URL`, and
 ## Commands
 
 ```bash
-npm run db:generate
-npm run db:migrate
-npm run db:migrate:deploy
-npm run db:seed
-npm run db:studio
-npm run lint
-npm run typecheck
-npm test
-npm run test:e2e # requires TEST_DATABASE_URL with migrations applied
-npm run build
+pnpm db:generate
+pnpm db:migrate
+pnpm db:migrate:deploy
+pnpm db:seed
+pnpm db:studio
+pnpm lint
+pnpm typecheck
+pnpm test
+pnpm test:e2e # requires TEST_DATABASE_URL with migrations applied
+pnpm build
 ```
 
 ## API overview
